@@ -43,33 +43,38 @@ const LogIn = (props) => {
 
   return (
     <div className="login">
-      <h4 className="outer-section">Login</h4>
+      
 
       <div className="login-form">
+        <h4 className="login-title">Login</h4>
         {data ? (
           <p>
             Success! You may now head <Link to="/">back to the homepage.</Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>
-            <input
-              className="form-input"
+            <div className="log-top">
+              <input
+              className="form-input log-input"
               placeholder="Your email"
               name="email"
               type="email"
               value={formState.email}
               onChange={handleChange}
             />
-
-            <input
-              className="form-input"
-              placeholder="******"
+            </div>
+            
+            <div className="log-mid">
+              <input
+              className="form-input log-input"
+              placeholder="Your Password"
               name="password"
               type="password"
               value={formState.password}
               onChange={handleChange}
             />
-
+            </div>
+            
             <button
               className="btn"
               style={{ cursor: "pointer" }}
