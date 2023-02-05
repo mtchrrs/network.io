@@ -1,13 +1,75 @@
-.main-cont{}
+.profile{
+    background-color: #D3FFE9;
+    height: 100vh;
+}
 
-.opp-block{}
+.prof-content{
+    width: 95vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 0px;
+    background-color: black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    padding-top: 100px;
+}
 
-.education{}
+.main-profile{
+    width: 20%; 
+    text-align: center;
+}
 
-.text{}
+.user-img{
+    border-radius: 100%;
+    max-width: 60%;
+    max-height: 60%;
+}
 
-.description{}
+.user-name{
+    font-size: 24px;
+}
 
-.experience{}
+.user-description{
+    width: 80%;
+    margin: auto;
+}
 
-.skills{}
+.user-links{
+    margin-top: 35px;
+    text-align: center;
+}
+
+
+
+.user-portfolio{
+
+}
+
+.user-opportunities{
+    margin-top: 20px;
+}
+
+.user-socials{
+    display: flex;
+    flex-direction: column;
+}
+
+.indv-link{
+    margin: auto;
+    margin-top: 20px;
+}
+
+.our-logo{
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    margin-top: 50px;
+} 
+
+.the-logo{
+    width: 10%;
+
+}

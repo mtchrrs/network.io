@@ -1,41 +1,128 @@
-import React from "react"; 
-import "../styles/profile.css";
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/signup.css'
 
-import Auth from '../utils/auth';
+import UploadBtn from '../components/uploadbtn'
+import Auth from '../utils/auth'
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER, QUERY_USER, QUERY_ME } from '../utils/queries';
+// const [user, { error, data }] = ''
+const error = ''
+const user = Auth.loggedIn()
 
-function ProfileEdit() { 
-    const { username: userParam } = useParams();
-    const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-        variables: { username: userParam },
-    });
-    
-    const user = data?.me || data?.user || {};
+const ProfileEdit = () => {
+  const [formState, setFormState] = useState({
+    displayName: '',
+    email: '',
+    password: '',
+    description: '',
+    portfolioLink: '',
+    opportunitiesLink: '',
+    linkedin: '',
+    instagram: '',
+    facebook: '',
+    twitter: ''
+  })
 
-    // navigate to personal profile page if username is yours
-    if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
-        return <Navigate to="/dashboard" />;
+  const handleChange = (event) => {
+    const { name, value } = event.target
+
+    setFormState({
+      ...formState,
+      [name]: value
+    })
+  }
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault()
+    console.log(formState)
+
+    try {
+      const { data } = await user({
+        variables: { ...formState }
+      })
+
+      Auth.loggedIn(data.user.token)
+    } catch (e) {
+      console.error(e)
     }
+  }
 
-    return ( 
-        <div className="main-cont-dash">
-            <div className="dash-content">
-                <h1 className="Dash-title">Welcome back, user full name here</h1>
-                <div className="dash-links">
-                    <div className="dash-profile">
-                        <h2 className="dash-prof-text">Profile</h2>
-                        <Link to={`${process.env.PUBLIC_URL}/profile`} element={<Profile />}>See</Link>
-                        <Link to={`${process.env.PUBLIC_URL}/profile-edit`} element={<ProfileEdit />}>Edit</Link>
-                    </div>
-                </div>
+  return (
+    <div className="signup">
+      <div className="form-su">
+        <h4 className="title">Update your profile</h4>
+        <form onSubmit={handleFormSubmit}>
+          <div className="mid-row">
+            <div className="img-div">
+              <p className="upload-text">Upload your profile image</p>
+              <UploadBtn />
             </div>
-            
-        </div>
-    ) 
-} 
-     
-export default ProfileEdit;
+
+            <p className="portfolio-link">
+              <Link to={`${process.env.PUBLIC_URL}/portfolio-build`}>
+                Click here to edit your portfolio
+              </Link>
+            </p>
+            <p className="opportunities-link">
+              <Link to={`${process.env.PUBLIC_URL}/opportunities-build`}>
+                Click here to edit your opportunities page
+              </Link>
+            </p>
+          </div>
+
+          <input
+            className="form-input third-row bio"
+            placeholder="Your bio"
+            name="description"
+            type="text"
+            value={formState.description}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input third-row social-links"
+            placeholder="linkedin URL"
+            name="linkedin"
+            type="text"
+            value={formState.linkedin}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input third-row social-links"
+            placeholder="instagram URL"
+            name="instagram"
+            type="text"
+            value={formState.instagram}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input third-row social-links"
+            placeholder="facebook URL"
+            name="facebook"
+            type="text"
+            value={formState.facebook}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input third-row social-links"
+            placeholder="twitter URL"
+            name="twitter"
+            type="text"
+            value={formState.twitter}
+            onChange={handleChange}
+          />
+
+          <button
+            className="submit-btn"
+            style={{ cursor: 'pointer' }}
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+        {error && <div className="error-message">{error.message}</div>}
+      </div>
+    </div>
+  )
+}
+
+export default ProfileEdit

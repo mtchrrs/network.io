@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import "../styles/signup.css";
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations.js';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/signup.css'
+import { useMutation } from '@apollo/client'
+import { ADD_USER } from '../utils/mutations.js'
 
-import UploadBtn from '../components/uploadbtn';
-import Auth from '../utils/auth';
-import LogIn from './login';
+import UploadBtn from '../components/uploadbtn'
+import Auth from '../utils/auth'
+import LogIn from './login'
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
@@ -16,46 +16,48 @@ const SignUp = () => {
     description: '',
     portfolioLink: '',
     opportunitiesLink: '',
-    linkedin:'',
+    linkedin: '',
     instagram: '',
-    facebook:'',
-    twitter:'',
-  });
-  const [addUser, { error, data }] = useMutation(ADD_USER); 
+    facebook: '',
+    twitter: ''
+  })
+  const [addUser, { error, data }] = useMutation(ADD_USER)
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
 
     setFormState({
       ...formState,
-      [name]: value,
-    });
-  };
+      [name]: value
+    })
+  }
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
+    event.preventDefault()
+    console.log(formState)
 
     try {
       const { data } = await addUser({
-        variables: { ...formState },
-      });
+        variables: { ...formState }
+      })
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token)
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  };
+  }
 
   return (
     <div className="signup">
-      <div className="form">
+      <div className="form-su">
         <h4 className="title">Sign Up</h4>
-        {data ? (
+        {data
+          ? (
           <p>
             Success! You may now head to the <Link to={`${process.env.PUBLIC_URL}/login`} element={LogIn}>login page</Link>
           </p>
-        ) : (
+            )
+          : (
           <form onSubmit={handleFormSubmit}>
             <input
               className="form-input name top-row"
@@ -95,7 +97,7 @@ const SignUp = () => {
                 <Link to={`${process.env.PUBLIC_URL}/opportunities-build`}>Click here to create your opportunities page</Link>
               </p>
             </div>
-            
+
             <input
               className="form-input third-row bio"
               placeholder="Your bio"
@@ -136,17 +138,17 @@ const SignUp = () => {
               value={formState.twitter}
               onChange={handleChange}
             />
-            
-            <button className="submit-btn" style={{ cursor: "pointer" }} type="submit">
+
+            <button className="submit-btn" style={{ cursor: 'pointer' }} type="submit">
               Submit
             </button>
           </form>
-        )}
+            )}
 
         {error && <div className="error-message">{error.message}</div>}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignUp

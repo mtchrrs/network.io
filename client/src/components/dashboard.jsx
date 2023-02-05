@@ -27,15 +27,14 @@ function Dashboard () {
     return <Navigate to="/dashboard" />
   }
 
-//   const copyFunction = () => {
-//     const link = document.getElementsByClassName('dash-copy-text')[0];
-//     const text = link.value();
-//     navigator.clipboard.writeText(text).then(() => {
-//       alert('Link copied to clipboard');
-//     });
-//   };
-  
-  
+  //   const copyFunction = () => {
+  //     // e.preventDefault()
+  //     const link = document.getElementsByClassName('dash-copy-text')[0]
+  //     const text = link.value()
+  //     navigator.clipboard.writeText(text).then(() => {
+  //       alert('Link copied to clipboard')
+  //     })
+  //   }
 
   return (
         <div className="main-cont-dash">
@@ -44,21 +43,22 @@ function Dashboard () {
                 <div className="dash-links">
                     <div className="dash-profile">
                         <h2 className="dash-prof-text">Profile</h2>
-                        <Link to={`${process.env.PUBLIC_URL}/profile`} element={<Profile />}>See</Link>
-                        <Link to={`${process.env.PUBLIC_URL}/profile-edit`} element={<ProfileEdit />}>Edit</Link>
+                        <Link className="dash-indv-links" to={`${process.env.PUBLIC_URL}/profile`} element={<Profile />}>See</Link>
+                        <Link className="dash-indv-links" to={`${process.env.PUBLIC_URL}/profile-edit`} element={<ProfileEdit />}>Edit</Link>
                     </div>
                     <div className="dash-portfolio">
                         <h2 className="dash-port-text">Portfolio</h2>
-                        <Link to={`${process.env.PUBLIC_URL}/portfolio`} element={<Portfolio />}>See</Link>
-                        <Link to={`${process.env.PUBLIC_URL}/portfolio-build`} element={<PortfolioBuild />}>Edit</Link>
+                        <Link className="dash-indv-links" to={`${process.env.PUBLIC_URL}/portfolio`} element={<Portfolio />}>See</Link>
+                        <Link className="dash-indv-links" to={`${process.env.PUBLIC_URL}/portfolio-build`} element={<PortfolioBuild />}>Edit</Link>
                     </div>
                     <div className="dash-opportunities">
                         <h2 className="dash-opp-text">Opportunities</h2>
-                        <Link to={`${process.env.PUBLIC_URL}/opportunities`} element={<Opportunities />}>See</Link>
-                        <Link to={`${process.env.PUBLIC_URL}/opportunities-build`} element={<OpportunitiesBuild />}>Edit</Link>
+                        <Link className="dash-indv-links" to={`${process.env.PUBLIC_URL}/opportunities`} element={<Opportunities />}>See</Link>
+                        <Link className="dash-indv-links" to={`${process.env.PUBLIC_URL}/opportunities-build`} element={<OpportunitiesBuild />}>Edit</Link>
                     </div>
                     <div className="copy-link">
                         <input className="dash-copy-text" type="text" value={`${user.portfolio}`}></input>
+                        <button className="copy-btn" onClick={''}>Copy Link</button>
                         {/* <button className="copy-btn" onClick={copyFunction()}>Copy Link</button> */}
                     </div>
                 </div>
