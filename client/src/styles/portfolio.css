@@ -46,18 +46,65 @@
 }
 
 /* port page */
-.main-cont{}
+.main-cont-port{
+    width: 100vw;
+    height: 160vh;
+    background-color: #D3FFE9;
+}
 
-.opp-block{}
+.main-show{
+    width: 95vw;
+    height: 140vh;
+    margin: auto;
+    margin-top: 0px;
+    background-color: black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    padding-top: 100px;
+}
 
-.text{}
+.opp-block{
+    width: 20%; 
+    text-align: center;
+    height: 40vh;
+    margin: 20px;
+    margin-top: 10px;
+    background-color: #8DDBE0;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
 
-.description{}
+.text{
+    font-size: 22px;
+    margin-bottom: 0px;
+}
 
-.education{}
+.description{
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
-.experience{}
+.education{
+    font-size: 28px;
+    margin-bottom: 5px;
+}
 
-.skills{}
+.experience{
+    font-size: 28px;
+    margin-bottom: 5px;
+}
 
+.skills{
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.last-skill{
+    margin-bottom: 20px;
+}
 
