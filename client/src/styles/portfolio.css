@@ -1,12 +1,49 @@
 /* build page */
 
-.form-cont{}
+.form-cont-port{
+    width: 100vw;
+    height: 200vh;
+    background-color: #D3FFE9;
+}
 
-.form{}
+.form{
+    width: 95vw;
+    height: 200vh;
+    margin: auto;
+    margin-top: 0px;
+    background-color: #8DDBE0;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
 
-.form-input{}
+.form-input{
+    background-color: #9BC4BC;
+    height: 25px;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
 
+.subtitle{
+    margin-left: 100px;
+}
 
+.ed-inp{
+    margin-left: 100px;
+    width: 80%;
+}
+
+.ex-inp{
+    margin-left: 100px;
+    width: 80%;
+}
+
+.sk-inp{
+    margin-left: 100px;
+    width: 80%;
+}
 
 /* port page */
 .main-cont{}

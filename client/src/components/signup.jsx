@@ -6,6 +6,7 @@ import { ADD_USER } from '../utils/mutations.js';
 
 import UploadBtn from '../components/uploadbtn';
 import Auth from '../utils/auth';
+import LogIn from './login';
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
@@ -52,7 +53,7 @@ const SignUp = () => {
         <h4 className="title">Sign Up</h4>
         {data ? (
           <p>
-            Success! You may now head <Link to="/">back to the homepage.</Link>
+            Success! You may now head to the <Link to={`${process.env.PUBLIC_URL}/login`} element={LogIn}>login page</Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>

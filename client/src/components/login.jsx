@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import Dashboard from "./dashboard";
 
 import Auth from '../utils/auth';
 
@@ -49,7 +50,7 @@ const LogIn = (props) => {
         <h4 className="login-title">Login</h4>
         {data ? (
           <p>
-            Success! You may now head <Link to="/">back to the homepage.</Link>
+            Success! You may now head to the <Link to={`${process.env.PUBLIC_URL}/dashboard`} element={<Dashboard />}>dashboard page</Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>
