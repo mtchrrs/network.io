@@ -71,5 +71,55 @@
 
 .the-logo{
     width: 10%;
+}
 
+@media only screen and (max-width: 400px) {
+    .prof-content{
+        width: 95vw;
+        height: 80vh;
+        margin: auto;
+        margin-top: 7vh;
+        background-color: black;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    .profile{
+        background-color: #D3FFE9;
+        height: 90vh;
+    }
+
+    .main-profile{
+        width: 60%; 
+        text-align: center;
+    }
+    
+    .user-img{
+        border-radius: 100%;
+        max-width: 60%;
+        max-height: 60%;
+        margin: 20px;
+    }
+    
+    .user-name{
+        font-size: 24px;
+    }
+    
+    .user-description{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .user-links{
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .the-logo{
+        width: 40%;
+    }
 }

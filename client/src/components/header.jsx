@@ -44,7 +44,7 @@ function Header () {
                 } */}
 
             </div>
-            <div className="bottom">test</div>
+            <div className="bottom"></div>
 
         </div>
   )
