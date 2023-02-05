@@ -1,14 +1,14 @@
 import React from "react"; 
 import "../styles/footer.css";
-import landingImage from '../assets/landing-img.png';
+import logo from '../assets/networkio-logo.png';
 // import Twitter from "../assets/twitter-logo.png";
 // import Linkedin from "../assets/linkedin-logo.png";
 // import Instagram from "../assets/instagram-logo.png";
 
 function Footer() { 
     return ( 
-        <div class="footer">
-            <img src={landingImage} className="img" alt="Network.io Example" />
+        <div className="footer">
+            <img src={logo} className="img-footer" alt="Network.io Example" />
         </div>
     ) 
 } 

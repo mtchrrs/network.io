@@ -1,11 +1,38 @@
-.landing{}
+.landing{
+    width: 100vw;
+    height: 95vh;
+    background-color: #D3FFE9;
+}
 
-.oval-shape{}
+.oval-shape{
+    background-color: #2C666E;
+    padding: 100px;
+    border-radius: 80% 80% 0% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 200px;
+}
 
-.img-cont{}
+.text-box{
+    width: 500px;
+    /* margin: 100px; */
+    /* margin-top: 10px; */
+    margin-left: 50px;
+}
 
-.img{}
+/* .img-cont{} */
 
-.h1-land{}
+.img{
+    height: 400px;
+}
 
-.p-landing{}
+.h1-land{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+.p-landing{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 26px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import "../styles/signup.css";
 
 const FileUploader = (props) => {
   const hiddenFileInput = React.useRef(null);
@@ -14,7 +15,7 @@ const FileUploader = (props) => {
   
   return (
     <>
-      <Button onClick={handleClick}>Upload</Button>
+      <button className="uplBtn" onClick={handleClick}>Upload</button>
       <input
         type="file"
         ref={hiddenFileInput}
