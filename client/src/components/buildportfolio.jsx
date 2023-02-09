@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { useQuery, useMutation } from '@apollo/client'
+// import { useQuery, useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/client'
 import Auth from '../utils/auth'
+import Profile from './profile'
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries'
+// import { QUERY_USER, QUERY_ME } from '../utils/queries'
 import { ADD_OPP } from '../utils/mutations'
 
 import '../styles/portfolio.css'
 
 const PortfolioBuild = () => {
   const { username: userParam } = useParams()
-  const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam }
-  })
+  // const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  //   variables: { username: userParam }
+  // })
 
-  const user = data?.me || data?.user || {}
+  // const user = data?.me || data?.user || {}
 
   if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
     return <Link to="/portfolio" />
@@ -170,7 +172,7 @@ const PortfolioBuild = () => {
             style={{ cursor: 'pointer' }}
             type="submit"
           >
-            Submit
+           <Link to={`${process.env.PUBLIC_URL}/profile`} element={<Profile />}>Submit</Link>
           </button>
         </form>
       )}

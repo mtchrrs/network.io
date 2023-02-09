@@ -51,10 +51,57 @@
 }
 
 /* opps page */
-.main-cont{}
+.main-cont-opp{
+    width: 100vw;
+    height: 160vh;
+    background-color: #D3FFE9;
+}
+
+.opp-holder{
+    width: 95vw;
+    height: 140vh;
+    margin: auto;
+    margin-top: 0px;
+    background-color: black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    padding-top: 100px;
+}
 
 .opp-block{}
 
-.text{}
+.text-opp{
+    font-size: 34px;
+}
 
-.description{}
+.description-opp{
+    font-size: 16px;
+}
+
+.back-btn{
+    color: white;
+    font-size: 20px;
+}
+
+.back-btn :hover{
+    text-decoration: none;
+    color: white;
+}
+
+.back-btn :active{
+    text-decoration: none;
+    color: white;
+}
+
+.back-btn :link {
+    text-decoration: none;
+    color: white;
+}
+  
+.back-btn :visited {
+    text-decoration: none;
+    color: white;
+}

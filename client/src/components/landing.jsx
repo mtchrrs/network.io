@@ -1,8 +1,8 @@
-import React from "react"; 
-import "../styles/landing.css";
-import landingImage from '../assets/landing-img.png';
+import React from 'react'
+import '../styles/landing.css'
+import landingImage from '../assets/landing-img.png'
 
-function Landing() {
+function Landing () {
   return (
     <div className="landing">
       <div className="oval-shape">
@@ -13,12 +13,12 @@ function Landing() {
           <h1 className="h1-land">
           Connect with people, businesses and opportunities
         </h1>
-        <p className="p-landing">The networking system that allows you to connect with others using your portfolio, share your socials, what you are looking for a and services, all through a QR code</p>
+        <p className="p-landing">The networking system that allows you to connect with others using your portfolio, share your socials, advertise what opportunities you are looking for, and services you provide, all through a QR code</p>
         </div>
-        
+
       </div>
     </div>
-  );
-} 
-    
-export default Landing;
+  )
+}
+
+export default Landing

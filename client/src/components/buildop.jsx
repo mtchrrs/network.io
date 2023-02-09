@@ -24,7 +24,7 @@ function OpportunitiesBuild () {
     oppTwoTitle: '',
     oppTwoDescr: '',
     oppThreeTitle: '',
-    oppThreeOpp: ''
+    oppThreeDescr: ''
   })
 
   const [addOpportunities, { error, info }] = useMutation(ADD_OPP)
@@ -109,7 +109,7 @@ function OpportunitiesBuild () {
           <input
             className="form-input opp-inp"
             placeholder="Opportunity Three Opportunity"
-            name="oppThreeOpp"
+            name="oppThreeDescr"
             type="text"
             value={formState.oppThreeDescr}
             onChange={handleChange}

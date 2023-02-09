@@ -6,13 +6,13 @@ import { ADD_USER } from '../utils/mutations.js'
 
 import UploadBtn from '../components/uploadbtn'
 import Auth from '../utils/auth'
-import LogIn from './login'
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
     displayName: '',
     email: '',
     password: '',
+    profileImg: '',
     description: '',
     portfolioLink: '',
     opportunitiesLink: '',
@@ -54,7 +54,7 @@ const SignUp = () => {
         {data
           ? (
           <p>
-            Success! You may now head to the <Link to={`${process.env.PUBLIC_URL}/login`} element={LogIn}>login page</Link>
+            Success! You may now head to the description-opp
           </p>
             )
           : (
@@ -87,7 +87,7 @@ const SignUp = () => {
             <div className="mid-row">
               <div className="img-div">
                 <p className="upload-text">Upload your profile image</p>
-                <UploadBtn />
+                <UploadBtn value="profileImg"/>
               </div>
 
               <p className="portfolio-link">

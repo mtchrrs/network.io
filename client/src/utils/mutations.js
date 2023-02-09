@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -10,44 +10,38 @@ export const LOGIN_USER = gql`
       }
     }
   }
-`;
+`
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($displayName: String!, $email: String!, $password: String!, $description: String!, $portfolioLink: String!, $opportunitiesLink: String!, $linkedin: String!, $instagram: String!, $facebook: String!, $twitter: String!) {
+    addUser($displayName: String!, $email: String!, $password: String!, $description: String!, $portfolioLink: String!, $opportunitiesLink: String!, $linkedin: String!, $instagram: String!, $facebook: String!, $twitter: String!) {
       token
       user {
         _id
-        username
+        displayName
+        email
+        description
+        portfolioLink
+        opportunitiesLink
+        linkedin
+        instagram
+        facebook
+        twitter
       }
     }
   }
-`;
-
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
+`
 
 export const ADD_OPP = gql`
-  mutation addOpportunities($oppTitle: String!, $oppText: String!) {
-    addOpportunities(oppTitle: $oppTitle, oppText: $oppText) {
+  mutation addOpportunities($oppOneTitle: String!, $oppOneDescr: String!, $oppTwoTitle: String!, $oppTwoDescr: String!, $oppThreeTitle: String!, $oppThreeDescr: String!) {
+    addOpportunities($oppOneTitle: String!, $oppOneDescr: String!, $oppTwoTitle: String!, $oppTwoDescr: String!, $oppThreeTitle: String!, $oppThreeDescr: String!) {
       _id
-      oppText
-      oppAuthor
-      createdAt
+      oppOneTitle
+      oppOneDescr
+      oppTwoTitle
+      oppTwoDescr
+      oppThreeTitle
+      oppThreeDescr
     }
   }
-`;
-
-// export const ADD_OPP = gql``;
+`
