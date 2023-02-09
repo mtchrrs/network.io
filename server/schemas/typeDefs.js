@@ -1,27 +1,56 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Tech {
+  type User {
     _id: ID!
-    name: String!
+    displayName: String!
+    email: String!
+    password: String!
+    profileImg: Image!
+    description: String!
+    portfolioLink: String!
+    opportunitiesLink: String!
+    linkedin: String!
+    instagram: String!
+    facebook: String!
+    twitter: String!
+    opportunities: [Opportunities]
+    portfolio: [Portfolio]
   }
 
-  type Matchup {
+  type Portfolio {
     _id: ID!
-    tech1: String!
-    tech2: String!
-    tech1_votes: Int
-    tech2_votes: Int
+    edOneTitle: String!
+    edOneDescr: String!
+    edTwoTitle: String!
+    edTwoDescr: String!
+    exOneTitle: String!
+    exOneDescr: String!
+    skillOne: String!
+    skillTwo: String!
+    skillThree: String!
+  }
+
+  type Opportunities {
+    _id: ID!
+    oppOneTitle: String!
+    oppOneDescr: String!
+    oppTwoTitle: String!
+    oppTwoDescr: String!
+    oppThreeTitle: String!
+    oppThreeDescr: String!
   }
 
   type Query {
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
+    user: [User]
+    portfolio(_id: String): [Portfolio]
+    opportunities(_id: String): [Opportunities]
   }
 
   type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
+    createUser(displayName: String!, email: String!, password: String!, description: String!, portfolioLink: String!, opportunitiesLink: String!, linkedin: String!, instagram: String!, facebook: String!, twitter: String!): User
+    createOpportunites(_id: String!, oppOneTitle: String!, oppOneDescr: String!, oppTwoTitle: String!, oppTwoDescr: String!, oppThreeTitle: String!, oppThreeDescr: String!): Opportunity
+    
   }
 `;
 

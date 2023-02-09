@@ -53,3 +53,31 @@
     margin-top: 20px;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 400px) {
+    .login{
+        margin-top: 7vh;
+        
+    }
+
+    .login-title{
+        padding-left: 140px;
+        font-size: 34px;
+        line-height: 12px;
+    }
+
+    .form-input{
+        background-color: #9BC4BC;
+        height: 25px;
+        padding: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    
+    .log-input{
+        margin-left: 20px;
+        width: 310px;
+    }
+    
+}
