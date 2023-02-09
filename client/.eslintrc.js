@@ -17,5 +17,7 @@ module.exports = {
     'react'
   ],
   rules: {
+    "multiline-ternary": "off", 
+    "react/prop-types": "off"
   }
 }

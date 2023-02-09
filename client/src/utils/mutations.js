@@ -45,3 +45,19 @@ export const ADD_OPP = gql`
     }
   }
 `
+export const ADD_PORT = gql`
+  mutation addPortfolio(edOneTitle: String!, edOneDescr: String!, edTwoTitle: String!, edTwoDescr: String!, exOneTitle: String!, exOneDescr: String!, skillOne: String!, skillTwo: String!, skillThree: String!) {
+    addPortfolio(edOneTitle: $edOneTitle, edOneDescr: $edOneDescr, edTwoTitle: $edTwoTitle, edTwoDescr: $edTwoDescr, exOneTitle: $exOneTitle, exOneDescr: $exOneDescr, skillOne: $skillOne, skillTwo: $skillTwo, skillThree: $skillThree) {
+      _id
+      edOneTitle
+      edOneDescr
+      edTwoTitle
+      edTwoDescr
+      exOneTitle
+      exOneDescr
+      skillOne
+      skillTwo
+      skillThree
+    }
+  }
+`

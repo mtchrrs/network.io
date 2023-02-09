@@ -22,23 +22,23 @@ const Portfolio = () => {
             <div className="main-show">
                 <div className="opp-block">
                     <h1 className="education">Education</h1>
-                    <h1 className="text">edTwoTitle{user.edOneTitle}</h1>
-                    <p className="description">edTwoDescr{user.edOneDescr}</p>
-                    <h1 className="text">edTwoTitle{user.edTwoTitle}</h1>
-                    <p className="description">edTwoDescr{user.edTwoDescr}</p>
+                    <h1 className="text">edTwoTitle{user.Portfolio.edOneTitle}</h1>
+                    <p className="description">edTwoDescr{user.Portfolio.edOneDescr}</p>
+                    <h1 className="text">edTwoTitle{user.Portfolio.edTwoTitle}</h1>
+                    <p className="description">edTwoDescr{user.Portfolio.edTwoDescr}</p>
                 </div>
                 <div className="opp-block">
                     <h1 className="experience">Experience</h1>
-                    <h1 className="text">exOneTitle{user.exOneTitle}</h1>
-                    <p className="description">exOneDescr{user.exOneDescr}</p>
-                    <h1 className="text">exOneTitle{user.exTwoTitle}</h1>
-                    <p className="description">exOneDescr{user.exTwoDescr}</p>
+                    <h1 className="text">exOneTitle{user.Portfolio.exOneTitle}</h1>
+                    <p className="description">exOneDescr{user.Portfolio.exOneDescr}</p>
+                    <h1 className="text">exOneTitle{user.Portfolio.exTwoTitle}</h1>
+                    <p className="description">exOneDescr{user.Portfolio.exTwoDescr}</p>
                 </div>
                 <div className="opp-block">
                     <h1 className="skills">Skills</h1>
-                    <h1 className="text">skill 1{user.skillOne}</h1>
-                    <h1 className="text">skill 2{user.skillTwo}</h1>
-                    <h1 className="text last-skill">skill 3{user.skillThree}</h1>
+                    <h1 className="text">skill 1{user.Portfolio.skillOne}</h1>
+                    <h1 className="text">skill 2{user.Portfolio.skillTwo}</h1>
+                    <h1 className="text last-skill">skill 3{user.Portfolio.skillThree}</h1>
                 </div>
                 <btn className="back-btn"><Link to={`${process.env.PUBLIC_URL}/profile`} element={<Profile />}>Back</Link></btn>
             </div>
